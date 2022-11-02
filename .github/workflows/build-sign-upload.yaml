@@ -8,6 +8,9 @@ jobs:
       hashes: ${{ steps.hash.outputs.hashes }}
     runs-on: ubuntu-latest
     steps:
+      - name: look around
+        run: echo -n pwd `pwd`; ls -la; ls -la ..
+
       - name: set up node js
         uses: actions/setup-node@v3
         #with:
