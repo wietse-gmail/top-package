@@ -8,6 +8,12 @@ jobs:
       hashes: ${{ steps.hash.outputs.hashes }}
     runs-on: ubuntu-latest
     steps:
+      - name: check out artifact source code
+        uses: actions/checkout@v3
+        with: 
+          repository: wietse-gmail/top-package
+          #path: chalk
+          
       - name: look around
         run: echo -n pwd `pwd`; ls -la; ls -la ..
 
