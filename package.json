@@ -1,0 +1,19 @@
+{
+  "name": "@wietse-z-venema/top-package",
+  "version": "0.9.0",
+  "description": "A top-level package that has dependencies but no dependents",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wietse-gmail/top-package.git"
+  },
+  "author": "Wietse Z Venema",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/wietse-gmail/top-package/issues"
+  },
+  "homepage": "https://github.com/wietse-gmail/top-package#readme"
+}
