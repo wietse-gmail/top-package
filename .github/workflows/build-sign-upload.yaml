@@ -12,10 +12,10 @@ jobs:
         uses: actions/checkout@v3
         with: 
           repository: wietse-gmail/top-package
-          #path: chalk
+          path: top-package
           
       - name: look around 1
-        run: echo -n pwd `pwd`; ls -la; ls -la ..
+        run: echo pwd `pwd`; ls -la; ls -la top-package
 
       - name: set up node js
         uses: actions/setup-node@v3
@@ -23,10 +23,10 @@ jobs:
         #  node-version: '14'
 
       - name: build artifact from source code; XXX strip off the scope
-        run: npm pack && mv wietse-z-venema-top-package-0.9.0.tgz top-package-0.9.0.tgz
+        run: cd top-package && npm pack && mv wietse-z-venema-top-package-0.9.0.tgz ../top-package-0.9.0.tgz
           
-      - name: look around 1
-        run: echo -n pwd `pwd`; ls -la; ls -la ..
+      - name: look around 2
+        run: echo pwd `pwd`; ls -la; ls -la top-package
 
       - name: generate artifact hashes
         shell: bash
