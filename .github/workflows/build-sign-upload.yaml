@@ -8,6 +8,10 @@ jobs:
       hashes: ${{ steps.hash.outputs.hashes }}
     runs-on: ubuntu-latest
     steps:
+          
+      - name: look around 0
+        run: echo pwd `pwd`; ls -la; ls -la ..
+
       - name: check out artifact source code
         uses: actions/checkout@v3
         with: 
