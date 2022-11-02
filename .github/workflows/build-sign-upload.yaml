@@ -14,7 +14,7 @@ jobs:
           repository: wietse-gmail/top-package
           #path: chalk
           
-      - name: look around
+      - name: look around 1
         run: echo -n pwd `pwd`; ls -la; ls -la ..
 
       - name: set up node js
@@ -24,6 +24,9 @@ jobs:
 
       - name: build artifact from source code
         run: npm pack
+          
+      - name: look around 1
+        run: echo -n pwd `pwd`; ls -la; ls -la ..
 
       - name: generate artifact hashes
         shell: bash
