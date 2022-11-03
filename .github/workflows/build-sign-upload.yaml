@@ -19,7 +19,7 @@ jobs:
           #path: top-package
           
       - name: look around 1
-        run: echo pwd `pwd`; ls -la; ls -la top-package
+        run: echo pwd `pwd`; ls -la; ls -la ..
 
       - name: set up node js
         uses: actions/setup-node@v3
@@ -30,7 +30,7 @@ jobs:
         run: npm pack && mv wietse-z-venema-top-package-0.9.0.tgz ../top-package-0.9.0.tgz
           
       - name: look around 2
-        run: echo pwd `pwd`; ls -la; ls -la top-package
+        run: echo pwd `pwd`; ls -la; ls -la ..
 
       - name: generate artifact hashes
         shell: bash
