@@ -26,8 +26,8 @@ jobs:
         #with:
         #  node-version: '14'
 
-      - name: build artifact from source code; XXX strip off the mangled scope
-        run: npm pack && mv wietse-z-venema-top-package-0.9.0.tgz top-package-0.9.0.tgz
+      - name: build artifact from source code
+        run: npm pack
           
       - name: look around 2
         run: echo pwd `pwd`; ls -la; ls -la ..
@@ -35,13 +35,13 @@ jobs:
       - name: generate artifact hashes
         shell: bash
         id: hash
-        run: echo "hashes=$(sha256sum top-package-0.9.0.tgz | base64 -w0)" >> "$GITHUB_OUTPUT"
+        run: echo "hashes=$(sha256sum wietse-z-venema-top-package-0.9.0.tgz | base64 -w0)" >> "$GITHUB_OUTPUT"
         
       - name: upload the artifact
         uses: actions/upload-artifact@v3
         with:
-          name: top-package-0.9.0.tgz
-          path: top-package-0.9.0.tgz
+          name: wietse-z-venema-top-package-0.9.0.tgz
+          path: wietse-z-venema-top-package-0.9.0.tgz
 
   # The provenance job does not need artifact(s), just their digest and name.
   # It persists the attestation with the name given with provenance-name.
@@ -57,7 +57,7 @@ jobs:
       # Don't upload provenance to a new release
       #upload-assets: true
       # Following settings fail with generator v1.2.0
-      provenance-name: top-package-0.9.0.tgz.intoto.jsonl
+      provenance-name: wietse-z-venema-top-package-0.9.0.tgz.intoto.jsonl
       private-repository: true
       # Workaround see https://github.com/slsa-framework/slsa-github-generator/issues/942#issuecomment-1264020245
       # This adds two minutes to the running time.
