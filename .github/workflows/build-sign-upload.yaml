@@ -1,5 +1,5 @@
 name: build-sign-upload
-run-name: build NPM tarball, sign, and persist temporatily
+run-name: build NPM tarball, generate signed provenance, and persist both temporarily
 on: [workflow_dispatch]
 jobs:
   # The build job persists the artifact(s) so that it remains available.
